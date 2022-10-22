@@ -15,16 +15,16 @@ function Header() {
     h1: {
       //empty for now
       display: "inline",
-      webkitTextStrokeWidth: "1px",
-      webkitTextStrokeColor: "black",
+      WebkitTextStrokeWidth: "1px",
+      WebkitTextStrokeColor: "black",
       background: "rgba(230,251,173,0.35)", 
     },
     p: {
       fontStyle: "italic",
       display: "inline",
       fontSize: "large",
-      webkitTextStrokeWidth: "1px",
-      webkitTextStrokeColor: "black",
+      WebkitTextStrokeWidth: "1px",
+      WebkitTextStrokeColor: "black",
       background: "rgba(210,238,130,0.5)",
     }
   }
