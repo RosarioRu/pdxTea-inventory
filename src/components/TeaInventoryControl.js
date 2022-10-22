@@ -11,6 +11,12 @@ class TeaInventoryControl extends React.Component {
     };
   }
 
+  handleClick = () => {
+    this.setState(
+      {newTeaFormVisible: true}
+    );
+  }
+
   render() {
     let currentVisibleState = null;
     let addTeaButton = null;
@@ -19,7 +25,7 @@ class TeaInventoryControl extends React.Component {
       currentVisibleState = <NewTeaForm />
     } else {
       currentVisibleState = <TeaList />
-      addTeaButton = <button onClick={this.handleClick} class="btn btn-secondary btn-sm">Add Tea to Invntory</button>
+      addTeaButton = <button onClick={this.handleClick} class="btn btn-secondary btn-sm">Add To Tea Inventory</button>
     }
     
     return (
