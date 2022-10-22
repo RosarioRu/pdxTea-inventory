@@ -7,7 +7,7 @@ class TeaInventoryControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //properties of state go here!
+      newTeaformVisible: false
     };
   }
 
@@ -15,7 +15,7 @@ class TeaInventoryControl extends React.Component {
     
     return (
       <React.Fragment>
-
+        <TeaList />
       </React.Fragment>
 
     );
