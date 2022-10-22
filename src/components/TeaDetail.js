@@ -11,12 +11,15 @@ function TeaDetail(props) {
       <h6>Caffeine: {props.tea.caffeineLevel}</h6>
       <h6>Crates: {props.tea.numberOfCrates}</h6>
       <h6>Ounce: {props.tea.amountInOunces}</h6>
+      <br/>
+      <button onClick={props.onEditClick} className="btn btn-secondary btn-sm">Update Crate Info</button><br/><br/>
     </React.Fragment>
   );
 }
 
 TeaDetail.propTypes = {
-  tea: PropTypes.object
+  tea: PropTypes.object,
+  onEditClick: PropTypes.func,
 };
   
 export default TeaDetail;
