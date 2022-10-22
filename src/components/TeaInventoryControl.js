@@ -1,5 +1,6 @@
 import React from "react";
 import NewTeaForm from "./NewTeaForm";
+import TeaDetail from "./TeaDetail";
 import TeaList from "./TeaList";
 
 class TeaInventoryControl extends React.Component {
@@ -9,6 +10,7 @@ class TeaInventoryControl extends React.Component {
     this.state = {
       newTeaFormVisible: false,
       mainTeaList: [],
+      selectedTea: null,
     };
   }
 
@@ -26,18 +28,36 @@ class TeaInventoryControl extends React.Component {
     });
   }
 
+  handleUpdatingSelectedTea = (id) => {
+    const teaThatWasClicked = this.state.mainTeaList.filter(tea => tea.id === id)[0];
+    this.setState({
+      selectedTea: teaThatWasClicked
+    });
+  }
+
   render() {
     let currentVisibleState = null;
     let buttonText = null;
 
-    if (this.state.newTeaFormVisible) {
+    if (this.state.selectedTea != null) {
+      currentVisibleState = 
+        <TeaDetail
+          tea = {this.state.selectedTea}
+        />
+        buttonText = "Back to tea list";
+    } 
+    else if (this.state.newTeaFormVisible) {
       currentVisibleState = 
         <NewTeaForm 
           onNewTeaCreation={this.handleAddingNewTeaAfterNewTeaFormSubmission}
         />
       buttonText = "Back to Tea List";
     } else {
-      currentVisibleState = <TeaList teaList={this.state.mainTeaList} />
+      currentVisibleState = 
+        <TeaList 
+          teaList={this.state.mainTeaList} 
+          onTeaSelection={this.handleUpdatingSelectedTea}
+        />
       buttonText = "Add To Tea Inventory";
     }
     
