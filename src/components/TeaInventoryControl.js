@@ -14,10 +14,23 @@ class TeaInventoryControl extends React.Component {
     };
   }
 
+  // handleClick = () => {
+  //   this.setState(prevState => ({
+  //     newTeaFormVisible: !prevState.newTeaFormVisible
+  //   }));
+  // }
+
   handleClick = () => {
-    this.setState(prevState => ({
-      newTeaFormVisible: !prevState.newTeaFormVisible
-    }));
+    if (this.state.selectedTea != null) {
+      this.setState({
+        newTeaFormVisible: false,
+        selectedTea: null
+      });
+    } else {
+      this.setState(prevState => ({
+        newTeaFormVisible: !prevState.newTeaFormVisible,
+      }));
+    }
   }
 
   handleAddingNewTeaAfterNewTeaFormSubmission = (newTea) => {
