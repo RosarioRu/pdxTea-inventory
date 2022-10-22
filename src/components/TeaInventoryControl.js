@@ -1,22 +1,26 @@
-// import React from "react";
+import React from "react";
+import NewTeaForm from "./NewTeaForm";
+import TeaList from "./TeaList";
 
-// class TeaInventoryControl extends React.Component {
+class TeaInventoryControl extends React.Component {
 
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       //properties of state go here!
-//     };
-//   }
+  constructor(props) {
+    super(props);
+    this.state = {
+      //properties of state go here!
+    };
+  }
 
-//   render() {
+  render() {
     
-//     return (
-//       <React.Fragment>
+    return (
+      <React.Fragment>
 
-//       </React.Fragment>
+      </React.Fragment>
 
-//     );
-//   }
+    );
+  }
 
-// }
+}
+
+export default TeaInventoryControl;
