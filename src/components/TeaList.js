@@ -22,9 +22,17 @@ const mainTeaList = [
   }
 ];
 
+const listStyles = {
+  border: "2px solid black",
+  textAlign: "center",
+  backgroundColor: "rgba(210,238,130,0.5)", 
+  height: "100vh"
+}
+
 function TeaList() {
   return (
     <React.Fragment>
+      <div style={listStyles}>
     {mainTeaList.map((tea, index) =>
       <Tea 
         name={tea.name}
@@ -34,6 +42,7 @@ function TeaList() {
         key={index}
       />
     )}
+    </div>
     </React.Fragment>
   );
 }
