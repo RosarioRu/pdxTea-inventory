@@ -33,6 +33,7 @@ function TeaList() {
   return (
     <React.Fragment>
       <div style={listStyles}>
+        <br/>
     {mainTeaList.map((tea, index) =>
       <Tea 
         name={tea.name}
