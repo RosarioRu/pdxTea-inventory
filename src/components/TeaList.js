@@ -32,8 +32,9 @@ function TeaList(props) {
     <React.Fragment>
       <div style={listStyles}>
         <br/>
-        {props.teaList.map((tea, index) =>
+        {props.teaList.map((tea) =>
           <Tea 
+            whenTeaClicked={props.onTeaSelection}
             name={tea.name}
             type={tea.type}
             origin={tea.origin}
@@ -41,7 +42,8 @@ function TeaList(props) {
             caffeineLevel={tea.caffeineLevel}
             numberOfCrates={tea.numberOfCrates}
             amountInOunces={tea.amountInOunces}
-            key={index}
+            key={tea.id}
+            id={tea.id}
           />
         )}
         <br/>
@@ -51,7 +53,8 @@ function TeaList(props) {
 }
 
 TeaList.propTypes = {
-  teaList: PropTypes.array
+  teaList: PropTypes.array,
+  onTeaSelection: PropTypes.func,
 };
 
 export default TeaList;
