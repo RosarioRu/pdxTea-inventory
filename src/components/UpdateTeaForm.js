@@ -95,7 +95,7 @@ function UpdateTeaForm(props) {
       id: v4(),
     });
   }
-}
+};
 
 UpdateTeaForm.propTypes = {
   tea: PropTypes.object,
