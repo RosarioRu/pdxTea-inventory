@@ -1,17 +1,21 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function Tea() {
-  const name = "Peppermint Splash";
-  const caffeine = "none";
-  const amountOfCrates = 1;
-  const amountInOunces = (130 * amountOfCrates);
+function Tea(props) {
   return (
     <React.Fragment>
-      <h4>{name}</h4>
-      <h6>Available Ounces: {amountInOunces}</h6>
-      <h6>Amount of caffeine: {caffeine}</h6>
+      <h4>{props.name}</h4>
+      <h6>Amount of caffeine: {props.caffeine}</h6>
+      <h6>Available Ounces: {props.amountInOunces}</h6>
+      
     </React.Fragment>
   );
+}
+
+Tea.propTypes = {
+  name: PropTypes.string.isRequired,
+  caffeine: PropTypes.string,
+  amountInOunces: PropTypes.number.isRequired
 }
 
 export default Tea;
