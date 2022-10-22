@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 function TeaDetail(props) {
   return (
     <React.Fragment>
+      <br/>
       <h4>{props.tea.name} Details</h4>
       <h6>Type: {props.tea.type}</h6>
       <h6>Origin: {props.tea.origin}</h6>

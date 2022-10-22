@@ -68,7 +68,7 @@ class TeaInventoryControl extends React.Component {
   
   handleUpdatingTeaInList = (editedVersionOfSelectedTea) => {
     const updatedMainTeaList = this.state.mainTeaList
-      .filter(tea => tea.id != this.state.selectedTea.id)
+      .filter(tea => tea.id !== this.state.selectedTea.id)
       .concat(editedVersionOfSelectedTea);
     this.setState({
       mainTeaList: updatedMainTeaList,

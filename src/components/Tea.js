@@ -9,6 +9,7 @@ function Tea(props) {
         <h6>Type: {props.type}</h6>
         <h6>Available Ounces: {props.amountInOunces}</h6>
       </div>
+      <br/>
     </React.Fragment>
   );
 }
