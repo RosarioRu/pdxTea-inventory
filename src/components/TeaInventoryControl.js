@@ -7,7 +7,7 @@ class TeaInventoryControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      newTeaformVisible: false
+      newTeaFormVisible: false
     };
   }
 
