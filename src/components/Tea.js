@@ -2,13 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Tea(props) {
+
+  const linkStyles = {
+    textDecoration: "underline",
+    color: "grey",
+    fontSize: "small",
+  }
+    
   return (
     <React.Fragment>
-      <div onClick = {() => props.whenTeaClicked(props.id)}>
         <h4>{props.name}</h4>
         <h6>Type: {props.type}</h6>
         <h6>Available Ounces: {props.amountInOunces}</h6>
-      </div>
+        <p style={linkStyles} onClick={() => props.whenTeaClicked(props.id)}>details</p>
+
       <br/>
     </React.Fragment>
   );
