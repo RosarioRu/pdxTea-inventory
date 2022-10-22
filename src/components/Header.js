@@ -17,10 +17,7 @@ function Header() {
       display: "inline",
       webkitTextStrokeWidth: "1px",
       webkitTextStrokeColor: "black",
-      // background: "rgba(0, 151, 19, 0.3)"
-      background: "rgba(210,238,130,0.2)",
-      
-      
+      background: "rgba(230,251,173,0.35)", 
     },
     p: {
       fontStyle: "italic",
@@ -28,9 +25,7 @@ function Header() {
       fontSize: "large",
       webkitTextStrokeWidth: "1px",
       webkitTextStrokeColor: "black",
-      // background: "rgba(0, 151, 19, 0.3)"
-      // background: "rgba(210,238,130,0.2)"
-      background: "rgba(200, 247, 197, 0.3)"
+      background: "rgba(210,238,130,0.5)",
     }
   }
 
