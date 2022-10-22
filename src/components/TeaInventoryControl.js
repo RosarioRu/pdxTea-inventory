@@ -12,10 +12,16 @@ class TeaInventoryControl extends React.Component {
   }
 
   render() {
+    let currentVisibleState = null;
+    if (this.state.newTeaFormVisible) {
+      currentVisibleState = <NewTeaForm />
+    } else {
+      currentVisibleState = <TeaList />
+    }
     
     return (
       <React.Fragment>
-        <TeaList />
+        {currentVisibleState}
       </React.Fragment>
 
     );
