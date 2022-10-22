@@ -60,13 +60,22 @@ class TeaInventoryControl extends React.Component {
     });
   }
 
-  //method to actually update the tea
-  handleUpdatingTeaInList();
+  
   //will update state in mainTeaList to reflect edited tea
-  //update selectedTea to false
+  //update selectedTea to null
   //update updateTeaFormVisible to false
   //must get passed as prop to UpdateTeaForm
   
+  handleUpdatingTeaInList = (editedVersionOfSelectedTea) => {
+    const updatedMainTeaList = this.state.mainTeaList
+      .filter(tea => tea.id != this.state.selectedTea.id)
+      .concat(editedVersionOfSelectedTea);
+    this.setState({
+      mainTeaList: updatedMainTeaList,
+      updateTeaFormVisible: false,
+      selectedTea: null,
+    });
+  }
 
   render() {
     let currentVisibleState = null;
@@ -76,6 +85,7 @@ class TeaInventoryControl extends React.Component {
       currentVisibleState = 
         <UpdateTeaForm 
           tea = {this.state.selectedTea}
+          onUpdateFormSubmission={this.handleUpdatingTeaInList}
         />
       buttonText = "Back";
     } else if (this.state.selectedTea != null) {
