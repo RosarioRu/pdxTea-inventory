@@ -1,5 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
+import { v4 } from "uuid"; 
+
 
 function NewTeaForm(props) {
 
@@ -15,7 +17,7 @@ function NewTeaForm(props) {
                 <input type="text" name="name" placeholder="Tea name" required />
               </td>
             </tr>
-            <tr>
+            <tr> 
               <td>
                 <label htmlFor="type">Select type</label>
                 <select id="type" name="type" required>
@@ -77,7 +79,8 @@ function NewTeaForm(props) {
       caffeineLevel: event.target.caffeineLevel.value,
       numberOfCrates: parseInt(event.target.numberOfCrates.value),
       amountInOunces: parseInt(event.target.numberOfCrates.value)*130,
-     
+      id: v4(),
+    
     })
     console.log("PRICE IS: " + event.target.price.value)
   }

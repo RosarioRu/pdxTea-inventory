@@ -4,9 +4,11 @@ import PropTypes from "prop-types";
 function Tea(props) {
   return (
     <React.Fragment>
-      <h4>{props.name}</h4>
-      <h6>Type: {props.type}</h6>
-      <h6>Available Ounces: {props.amountInOunces}</h6>
+      <div onClick = {() => props.whenTeaClicked(props.id)}>
+        <h4>{props.name}</h4>
+        <h6>Type: {props.type}</h6>
+        <h6>Available Ounces: {props.amountInOunces}</h6>
+      </div>
     </React.Fragment>
   );
 }
@@ -16,6 +18,8 @@ Tea.propTypes = {
   type: PropTypes.string,
   numberOfCrates: PropTypes.number,
   amountInOunces: PropTypes.number,
+  id: PropTypes.string,
+  whenTeaClicked: PropTypes.func,
 }
 
 export default Tea;
