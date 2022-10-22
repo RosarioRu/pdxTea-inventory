@@ -47,21 +47,20 @@ function UpdateTeaForm(props) {
             </tr>
             <tr>
               <td>
+              {/* button bellow should trigger function called handleUpdatingTeaFormSubmission() below */}
               <button type="submit" className="btn btn-secondary btn-sm">Update</button>
               </td>
             </tr>
           </tbody>
         </table>
       </form> 
-
-
-
-{/* 
-      <h1>Update form goes here</h1>
-      <p>Checking that {props.tea.name} is the selected tea's name!</p> */}
     </React.Fragment>
   );
 }
+
+function handleUpdatingTeaFormSubmission() 
+//capture values from the edit form and then triggers the handleUpdatingTeaInList method in the TicketControl component.
+
 
 UpdateTeaForm.propTypes = {
   tea: PropTypes.object,
