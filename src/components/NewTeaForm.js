@@ -3,6 +3,7 @@ import React from "react";
 function NewTeaForm(props) {
   return (
     <React.Fragment>
+      <form onSubmit={handleNewTeaFormSubmission}>
       <br/>
       <table class="table">
         <thead>
@@ -69,9 +70,19 @@ function NewTeaForm(props) {
       <input type="text" name="caffeineLevel" placeholder="Caffeine level" /> 
 
       <button type="submit">Add Crate</button> */}
-      
+     </form> 
     </React.Fragment>
   );
+
+  function handleNewTeaFormSubmission(event) {
+    event.preventDefault();
+    console.log(event.target.name.value);
+    console.log(event.target.type.value);
+    console.log(event.target.origin.value);
+    console.log(event.target.price.value);
+    console.log(event.target.caffeineLevel.value);
+  }
+
 }
 
 export default NewTeaForm;
