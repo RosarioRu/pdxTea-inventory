@@ -2,6 +2,7 @@ import React from "react";
 import NewTeaForm from "./NewTeaForm";
 import TeaDetail from "./TeaDetail";
 import TeaList from "./TeaList";
+import UpdateTeaForm from "./UpdateTeaForm";
 
 class TeaInventoryControl extends React.Component {
 
@@ -9,6 +10,7 @@ class TeaInventoryControl extends React.Component {
     super(props);
     this.state = {
       newTeaFormVisible: false,
+      updateTeaFormVisible: false,
       mainTeaList: [],
       selectedTea: null,
     };
@@ -20,8 +22,18 @@ class TeaInventoryControl extends React.Component {
   //   }));
   // }
 
+  handleEditClick = () => {
+    this.setState({
+      updateTeaFormVisible: true,      
+    });
+  }
+
   handleClick = () => {
-    if (this.state.selectedTea != null) {
+    if (this.state.updateTeaFormVisible) {
+      this.setState({
+        updateTeaFormVisible: false,
+      });
+    } else if (this.state.selectedTea != null) {
       this.setState({
         newTeaFormVisible: false,
         selectedTea: null
@@ -52,12 +64,16 @@ class TeaInventoryControl extends React.Component {
     let currentVisibleState = null;
     let buttonText = null;
 
-    if (this.state.selectedTea != null) {
+    if (this.state.updateTeaFormVisible) {
+      currentVisibleState = <UpdateTeaForm />
+      buttonText = "Back";
+    } else if (this.state.selectedTea != null) {
       currentVisibleState = 
         <TeaDetail
           tea = {this.state.selectedTea}
+          onEditClick={this.handleEditClick}
         />
-        buttonText = "Back to tea list";
+      buttonText = "Back to tea list";
     } 
     else if (this.state.newTeaFormVisible) {
       currentVisibleState = 
