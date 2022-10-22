@@ -20,7 +20,11 @@ function NewTeaForm(props) {
 
       <input type="number" name="price" placeholder="Price per ounce" /><br/><br/>
 
-      <input type="text" name="caffeineLevel" placeholder="Caffeine level" /> */}
+      <input type="text" name="caffeineLevel" placeholder="Caffeine level" /> 
+
+      <button type="submit">Add Crate</button>
+      
+      */}
     </React.Fragment>
   );
 }
