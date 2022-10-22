@@ -12,13 +12,14 @@ function NewTeaForm(props) {
           <tbody>
             <tr>
               <td>
-                <input type="text" name="name" placeholder="Tea name" />
+                <input type="text" name="name" placeholder="Tea name" required />
               </td>
             </tr>
             <tr>
               <td>
                 <label htmlFor="type">Select type</label>
-                <select id="type" name="type">
+                <select id="type" name="type" required>
+                  <option></option>
                   <option value="green">Green</option>
                   <option value="black">Black</option>
                   <option value="oolong">Oolong</option>
@@ -34,17 +35,25 @@ function NewTeaForm(props) {
             </tr>
             <tr>
               <td>
-                <input type="number" name="price" placeholder="Price per ounce" />
+                <input type="number" step="0.01" min="1" name="price" placeholder="Price per ounce" required />
               </td>
             </tr>
             <tr>
               <td>
-                <input type="text" name="caffeineLevel" placeholder="Caffeine level" />
+                <label htmlFor="caffeineLevel">Caffeine Level</label>
+                <select id="caffeineLevel" name="caffeineLevel">
+                  <option value=""></option>
+                  <option value="none">none</option>
+                  <option value="low">low</option>
+                  <option value="medium">medium</option>
+                  <option value="high">high</option>
+                </select>
+                {/* <input type="text" name="caffeineLevel" placeholder="Caffeine level" /> */}
               </td>
             </tr>
             <tr>
               <td>
-                <input type="number" name="numberOfCrates" placeholder="Number of crates" />
+                <input type="number" name="numberOfCrates" min="1" placeholder="Number of crates" required />
               </td>
             </tr>
             <tr>
@@ -64,11 +73,13 @@ function NewTeaForm(props) {
       name: event.target.name.value,
       type: event.target.type.value,
       origin: event.target.origin.value,
-      price: parseInt(event.target.price.value),
+      price: parseFloat(event.target.price.value),
       caffeineLevel: event.target.caffeineLevel.value,
       numberOfCrates: parseInt(event.target.numberOfCrates.value),
       amountInOunces: parseInt(event.target.numberOfCrates.value)*130,
+     
     })
+    console.log("PRICE IS: " + event.target.price.value)
   }
 
 }

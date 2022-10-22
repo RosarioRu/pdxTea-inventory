@@ -36,7 +36,9 @@ function TeaList(props) {
           <Tea 
             name={tea.name}
             type={tea.type}
-            caffeine={tea.caffeineLevel}
+            origin={tea.origin}
+            price={tea.price}
+            caffeineLevel={tea.caffeineLevel}
             numberOfCrates={tea.numberOfCrates}
             amountInOunces={tea.amountInOunces}
             key={index}
