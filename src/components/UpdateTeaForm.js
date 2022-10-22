@@ -5,7 +5,7 @@ import { v4 } from "uuid";
 
 function UpdateTeaForm(props) {
   const updateFormStyles = {
-    width: "50%"
+    width: "50%",
     marginLeft: "auto",
     marginRight: "auto",
     input: {
