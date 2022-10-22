@@ -13,7 +13,8 @@ function Tea(props) {
 
 Tea.propTypes = {
   name: PropTypes.string,
-  caffeineLevel: PropTypes.string,
+  type: PropTypes.string,
+  numberOfCrates: PropTypes.number,
   amountInOunces: PropTypes.number,
 }
 

@@ -7,7 +7,7 @@ function NewTeaForm(props) {
     <React.Fragment>
       <form onSubmit={handleNewTeaFormSubmission}>
         <br/>
-        <h4>Add a New Crate of Tea</h4>
+        <h4>Add Tea</h4>
         <table className="table">
           <tbody>
             <tr>
@@ -44,6 +44,11 @@ function NewTeaForm(props) {
             </tr>
             <tr>
               <td>
+                <input type="number" name="numberOfCrates" placeholder="Number of crates" />
+              </td>
+            </tr>
+            <tr>
+              <td>
               <button type="submit" className="btn btn-secondary btn-sm">Add Crate</button>
               </td>
             </tr>
@@ -61,6 +66,8 @@ function NewTeaForm(props) {
       origin: event.target.origin.value,
       price: parseInt(event.target.price.value),
       caffeineLevel: event.target.caffeineLevel.value,
+      numberOfCrates: parseInt(event.target.numberOfCrates.value),
+      amountInOunces: parseInt(event.target.numberOfCrates.value)*130,
     })
   }
 

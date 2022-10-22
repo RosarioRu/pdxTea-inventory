@@ -35,6 +35,7 @@ function TeaList(props) {
         {props.teaList.map((tea, index) =>
           <Tea 
             name={tea.name}
+            type={tea.type}
             caffeine={tea.caffeineLevel}
             numberOfCrates={tea.numberOfCrates}
             amountInOunces={tea.amountInOunces}
