@@ -12,26 +12,27 @@ class TeaInventoryControl extends React.Component {
   }
 
   handleClick = () => {
-    this.setState(
-      {newTeaFormVisible: true}
-    );
+    this.setState(prevState => ({
+      newTeaFormVisible: !prevState.newTeaFormVisible
+    }));
   }
 
   render() {
     let currentVisibleState = null;
-    let addTeaButton = null;
+    let buttonText = null;
 
     if (this.state.newTeaFormVisible) {
       currentVisibleState = <NewTeaForm />
+      buttonText = "Back to Tea List";
     } else {
       currentVisibleState = <TeaList />
-      addTeaButton = <button onClick={this.handleClick} class="btn btn-secondary btn-sm">Add To Tea Inventory</button>
+      buttonText = "Add To Tea Inventory";
     }
     
     return (
       <React.Fragment>
         {currentVisibleState}
-        {addTeaButton}
+        <button onClick={this.handleClick} class="btn btn-secondary btn-sm">{buttonText}</button>
       </React.Fragment>
 
     );
