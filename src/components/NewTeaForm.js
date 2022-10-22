@@ -5,22 +5,32 @@ import { v4 } from "uuid";
 
 function NewTeaForm(props) {
 
+  const updateFormStyles = {
+    width: "20%",
+    marginLeft: "auto",
+    marginRight: "auto",
+    input: {
+      textAlign: "center",
+      marginLeft: "3px",
+    },
+  }
+
   return (
     <React.Fragment>
-      <form onSubmit={handleNewTeaFormSubmission}>
+      <form onSubmit={handleNewTeaFormSubmission} style={updateFormStyles}>
         <br/>
         <h4>Add Tea</h4>
         <table className="table">
           <tbody>
             <tr>
               <td>
-                <input type="text" name="name" placeholder="Tea name" required />
+                <input type="text" name="name" placeholder="Tea name" required style={updateFormStyles.input}/>
               </td>
             </tr>
             <tr> 
               <td>
                 <label htmlFor="type">Select type</label>
-                <select id="type" name="type" required>
+                <select id="type" name="type" required style={updateFormStyles.input}>
                   <option></option>
                   <option value="green">Green</option>
                   <option value="black">Black</option>
@@ -32,18 +42,18 @@ function NewTeaForm(props) {
             </tr>
             <tr>
               <td>
-                <input type="text" name="origin" placeholder="Origin" />
+                <input type="text" name="origin" placeholder="Origin" style={updateFormStyles.input} />
               </td>
             </tr>
             <tr>
               <td>
-                <input type="number" step="0.01" min="1" name="price" placeholder="Price per ounce" required />
+                <input type="number" step="0.01" min="1" name="price" placeholder="Price per ounce" required style={updateFormStyles.input} />
               </td>
             </tr>
             <tr>
               <td>
                 <label htmlFor="caffeineLevel">Caffeine Level</label>
-                <select id="caffeineLevel" name="caffeineLevel">
+                <select id="caffeineLevel" name="caffeineLevel" style={updateFormStyles.input}>
                   <option value=""></option>
                   <option value="none">none</option>
                   <option value="low">low</option>
@@ -55,7 +65,7 @@ function NewTeaForm(props) {
             </tr>
             <tr>
               <td>
-                <input type="number" name="numberOfCrates" min="1" placeholder="Number of crates" required />
+                <input type="number" name="numberOfCrates" min="1" placeholder="Number of crates" required style={updateFormStyles.input} />
               </td>
             </tr>
             <tr>
