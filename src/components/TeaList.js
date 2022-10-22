@@ -25,7 +25,6 @@ const mainTeaList = [
 function TeaList() {
   return (
     <React.Fragment>
-    <hr/>
     {mainTeaList.map((tea, index) =>
       <Tea 
         name={tea.name}
