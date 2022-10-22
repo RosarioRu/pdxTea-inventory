@@ -65,7 +65,10 @@ class TeaInventoryControl extends React.Component {
     let buttonText = null;
 
     if (this.state.updateTeaFormVisible) {
-      currentVisibleState = <UpdateTeaForm />
+      currentVisibleState = 
+        <UpdateTeaForm 
+          tea = {this.state.selectedTea}
+        />
       buttonText = "Back";
     } else if (this.state.selectedTea != null) {
       currentVisibleState = 
