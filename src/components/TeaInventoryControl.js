@@ -72,7 +72,8 @@ class TeaInventoryControl extends React.Component {
       const ouncesOfTeaAfterSale = ouncesOfTeaBeforeSale - 1;
       const cratesOfTeaBeforeSale = this.state.selectedTea.numberOfCrates;
       const cratesOfTeaAfterSale = cratesOfTeaBeforeSale - (1/130);
-      const editedVersionOfTeaThatSold = {...teaThatSold, amountInOunces: ouncesOfTeaAfterSale, numberOfCrates: cratesOfTeaAfterSale};
+      const teaSold = (this.state.selectedTea.teaSold || 0)
+      const editedVersionOfTeaThatSold = {...teaThatSold, amountInOunces: ouncesOfTeaAfterSale, numberOfCrates: cratesOfTeaAfterSale, teaSold:(teaSold +1)};
       const updatedMainTeaList = this.state.mainTeaList
         .filter(tea => tea.id !== this.state.selectedTea.id)
         .concat(editedVersionOfTeaThatSold);
