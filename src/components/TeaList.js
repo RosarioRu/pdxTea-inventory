@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 
 const listStyles = {
-  border: "2px solid black"
+  // border: "2px solid black"
 }
 
 function TeaList(props) {

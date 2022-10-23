@@ -70,7 +70,7 @@ function NewTeaForm(props) {
             </tr>
             <tr>
               <td>
-              <button type="submit" className="btn btn-secondary btn-sm">Add Crate</button>
+              <button type="submit" className="btn btn-secondary btn-sm">Add to Inventory</button>
               </td>
             </tr>
           </tbody>

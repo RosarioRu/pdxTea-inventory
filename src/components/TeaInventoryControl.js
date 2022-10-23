@@ -165,7 +165,7 @@ class TeaInventoryControl extends React.Component {
           teaList={this.state.mainTeaList} 
           onTeaSelection={this.handleUpdatingSelectedTea}
         />
-      buttonText = "Add To Tea Inventory";
+      buttonText = "Add a new Tea";
     }
     
     return (

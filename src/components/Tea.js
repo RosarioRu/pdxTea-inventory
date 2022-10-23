@@ -13,9 +13,8 @@ function Tea(props) {
     <React.Fragment>
         <h4>{props.name}</h4>
         <h6>Type: {props.type}</h6>
-        <h6>Available Ounces: {props.amountInOunces}</h6>
+        <h6>Available ounces: {props.amountInOunces}</h6>
         <p style={linkStyles} onClick={() => props.whenTeaClicked(props.id)}>details</p>
-
       <br/>
     </React.Fragment>
   );
