@@ -7,7 +7,15 @@ function TeaDetail(props) {
     margin: "2px",
     marginLeft: "1%",
     marginRight: "1%",
+    sell: {
+      marginLeft: "1%",
+      marginRight: "1%",
+    }
   }
+
+
+
+  
 
   return (
     <React.Fragment>
@@ -21,7 +29,14 @@ function TeaDetail(props) {
       <h6>Ounce: {props.tea.amountInOunces}</h6>
       <br/>
 
-      <button onClick={props.onSellClick} className="btn btn-outline-dark btn-sm">Sell 1oz</button><br/><br/>
+      <button onClick={props.onSellClick} className="btn btn-outline-dark btn-sm" style={buttonStyles.sell}>Sell 1oz</button>
+
+      <button onClick={props.onSellThreeOzClick} className="btn btn-outline-dark btn-sm" style={buttonStyles.sell}>Sell 3oz</button>
+
+      <button onClick={props.onSellTenOzClick} className="btn btn-outline-dark btn-sm" style={buttonStyles.sell}>Sell 10oz</button>
+
+      <br/><br/><br/><br/>
+
       <button style={buttonStyles} onClick={props.onEditClick} className="btn btn-secondary btn-sm">Update Tea Info</button>
     </React.Fragment>
   );
@@ -30,7 +45,9 @@ function TeaDetail(props) {
 TeaDetail.propTypes = {
   tea: PropTypes.object,
   onEditClick: PropTypes.func,
-  onSellClick: PropTypes.func
+  onSellClick: PropTypes.func,
+  onSellThreeOzClick: PropTypes.func,
+  onSellTenOzClick: PropTypes.func,
 };
   
 export default TeaDetail;
