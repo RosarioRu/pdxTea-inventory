@@ -26,7 +26,8 @@ function TeaDetail(props) {
       <h6>Price: ${props.tea.price}/oz</h6>
       <h6>Caffeine: {props.tea.caffeineLevel}</h6>
       <h6>Crates: {parseFloat(props.tea.numberOfCrates).toFixed(2)}</h6>
-      <h6>Ounce: {props.tea.amountInOunces}</h6>
+      <h6>Ounces: {props.tea.amountInOunces}</h6>
+      <h6>Oz sold:{props.tea.teaSold}</h6>
       <br/>
 
       <button onClick={props.onSellClick} className="btn btn-outline-dark btn-sm" style={buttonStyles.sell}>Sell 1oz</button>
