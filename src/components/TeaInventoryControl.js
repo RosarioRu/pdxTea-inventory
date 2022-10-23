@@ -16,12 +16,6 @@ class TeaInventoryControl extends React.Component {
     };
   }
 
-  // handleClick = () => {
-  //   this.setState(prevState => ({
-  //     newTeaFormVisible: !prevState.newTeaFormVisible
-  //   }));
-  // }
-
   handleEditClick = () => {
     this.setState({
       updateTeaFormVisible: true,      
@@ -74,52 +68,64 @@ class TeaInventoryControl extends React.Component {
   handleSellingSelectedTea = () => {
     const teaThatSold = this.state.selectedTea;
     const ouncesOfTeaBeforeSale = this.state.selectedTea.amountInOunces;
-    const ouncesOfTeaAfterSale = ouncesOfTeaBeforeSale - 1;
-    const cratesOfTeaBeforeSale = this.state.selectedTea.numberOfCrates;
-    const cratesOfTeaAfterSale = cratesOfTeaBeforeSale - (1/130);
-    const editedVersionOfTeaThatSold = {...teaThatSold, amountInOunces: ouncesOfTeaAfterSale, numberOfCrates: cratesOfTeaAfterSale};
-    const updatedMainTeaList = this.state.mainTeaList
-      .filter(tea => tea.id !== this.state.selectedTea.id)
-      .concat(editedVersionOfTeaThatSold);
-    this.setState({
-      mainTeaList: updatedMainTeaList,
-      updateTeaFormVisible: false,
-      selectedTea: null,
-    });
+    if (ouncesOfTeaBeforeSale>=1) {
+      const ouncesOfTeaAfterSale = ouncesOfTeaBeforeSale - 1;
+      const cratesOfTeaBeforeSale = this.state.selectedTea.numberOfCrates;
+      const cratesOfTeaAfterSale = cratesOfTeaBeforeSale - (1/130);
+      const editedVersionOfTeaThatSold = {...teaThatSold, amountInOunces: ouncesOfTeaAfterSale, numberOfCrates: cratesOfTeaAfterSale};
+      const updatedMainTeaList = this.state.mainTeaList
+        .filter(tea => tea.id !== this.state.selectedTea.id)
+        .concat(editedVersionOfTeaThatSold);
+      this.setState({
+        mainTeaList: updatedMainTeaList,
+        updateTeaFormVisible: false,
+        selectedTea: null,
+      });
+    } else {
+      alert("Not Enough Tea Left For This Sale");
+    }
   }
 
   handleSellingThreeOunces= () => {
     const teaThatSold = this.state.selectedTea;
     const ouncesOfTeaBeforeSale = this.state.selectedTea.amountInOunces;
-    const ouncesOfTeaAfterSale = ouncesOfTeaBeforeSale - 3;
-    const cratesOfTeaBeforeSale = this.state.selectedTea.numberOfCrates;
-    const cratesOfTeaAfterSale = cratesOfTeaBeforeSale - (3/130);
-    const editedVersionOfTeaThatSold = {...teaThatSold, amountInOunces: ouncesOfTeaAfterSale, numberOfCrates: cratesOfTeaAfterSale};
-    const updatedMainTeaList = this.state.mainTeaList
-      .filter(tea => tea.id !== this.state.selectedTea.id)
-      .concat(editedVersionOfTeaThatSold);
-    this.setState({
-      mainTeaList: updatedMainTeaList,
-      updateTeaFormVisible: false,
-      selectedTea: null,
-    });
+    if (ouncesOfTeaBeforeSale>=3) {
+      const ouncesOfTeaAfterSale = ouncesOfTeaBeforeSale - 3;
+      const cratesOfTeaBeforeSale = this.state.selectedTea.numberOfCrates;
+      const cratesOfTeaAfterSale = cratesOfTeaBeforeSale - (3/130);
+      const editedVersionOfTeaThatSold = {...teaThatSold, amountInOunces: ouncesOfTeaAfterSale, numberOfCrates: cratesOfTeaAfterSale};
+      const updatedMainTeaList = this.state.mainTeaList
+        .filter(tea => tea.id !== this.state.selectedTea.id)
+        .concat(editedVersionOfTeaThatSold);
+      this.setState({
+        mainTeaList: updatedMainTeaList,
+        updateTeaFormVisible: false,
+        selectedTea: null,
+      });
+    } else {
+      alert("Not Enough Tea Left For This Sale");
+    }
   }
 
   handleSellingTenOunces= () => {
     const teaThatSold = this.state.selectedTea;
     const ouncesOfTeaBeforeSale = this.state.selectedTea.amountInOunces;
-    const ouncesOfTeaAfterSale = ouncesOfTeaBeforeSale - 10;
-    const cratesOfTeaBeforeSale = this.state.selectedTea.numberOfCrates;
-    const cratesOfTeaAfterSale = cratesOfTeaBeforeSale - (10/130);
-    const editedVersionOfTeaThatSold = {...teaThatSold, amountInOunces: ouncesOfTeaAfterSale, numberOfCrates: cratesOfTeaAfterSale};
-    const updatedMainTeaList = this.state.mainTeaList
-      .filter(tea => tea.id !== this.state.selectedTea.id)
-      .concat(editedVersionOfTeaThatSold);
-    this.setState({
-      mainTeaList: updatedMainTeaList,
-      updateTeaFormVisible: false,
-      selectedTea: null,
-    });
+    if (ouncesOfTeaBeforeSale>=10) {
+      const ouncesOfTeaAfterSale = ouncesOfTeaBeforeSale - 10;
+      const cratesOfTeaBeforeSale = this.state.selectedTea.numberOfCrates;
+      const cratesOfTeaAfterSale = cratesOfTeaBeforeSale - (10/130);
+      const editedVersionOfTeaThatSold = {...teaThatSold, amountInOunces: ouncesOfTeaAfterSale, numberOfCrates: cratesOfTeaAfterSale};
+      const updatedMainTeaList = this.state.mainTeaList
+        .filter(tea => tea.id !== this.state.selectedTea.id)
+        .concat(editedVersionOfTeaThatSold);
+      this.setState({
+        mainTeaList: updatedMainTeaList,
+        updateTeaFormVisible: false,
+        selectedTea: null,
+      });
+    } else {
+      alert("Not Enough Tea Left For This Sale");
+    }
   }
 
   render() {
