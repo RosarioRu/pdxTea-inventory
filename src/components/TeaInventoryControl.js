@@ -60,16 +60,25 @@ class TeaInventoryControl extends React.Component {
     });
   }
 
-  
-  //will update state in mainTeaList to reflect edited tea
-  //update selectedTea to null
-  //update updateTeaFormVisible to false
-  //must get passed as prop to UpdateTeaForm
-  
   handleUpdatingTeaInList = (editedVersionOfSelectedTea) => {
     const updatedMainTeaList = this.state.mainTeaList
       .filter(tea => tea.id !== this.state.selectedTea.id)
       .concat(editedVersionOfSelectedTea);
+    this.setState({
+      mainTeaList: updatedMainTeaList,
+      updateTeaFormVisible: false,
+      selectedTea: null,
+    });
+  }
+
+  handleSellingSelectedTea = () => {
+    const teaThatSold = this.state.selectedTea;
+    const ouncesOfTeaBeforeSale = this.state.selectedTea.amountInOunces;
+    const ouncesOfTeaAfterSale = ouncesOfTeaBeforeSale - 1;
+    const editedVersionOfTeaThatSold = {...teaThatSold, amountInOunces: ouncesOfTeaAfterSale};
+    const updatedMainTeaList = this.state.mainTeaList
+      .filter(tea => tea.id !== this.state.selectedTea.id)
+      .concat(editedVersionOfTeaThatSold);
     this.setState({
       mainTeaList: updatedMainTeaList,
       updateTeaFormVisible: false,
@@ -93,6 +102,7 @@ class TeaInventoryControl extends React.Component {
         <TeaDetail
           tea = {this.state.selectedTea}
           onEditClick={this.handleEditClick}
+          onSellClick={this.handleSellingSelectedTea}
         />
       buttonText = "Back to tea list";
     } 
