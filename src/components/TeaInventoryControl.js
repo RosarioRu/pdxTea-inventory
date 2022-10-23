@@ -88,6 +88,40 @@ class TeaInventoryControl extends React.Component {
     });
   }
 
+  handleSellingThreeOunces= () => {
+    const teaThatSold = this.state.selectedTea;
+    const ouncesOfTeaBeforeSale = this.state.selectedTea.amountInOunces;
+    const ouncesOfTeaAfterSale = ouncesOfTeaBeforeSale - 3;
+    const cratesOfTeaBeforeSale = this.state.selectedTea.numberOfCrates;
+    const cratesOfTeaAfterSale = cratesOfTeaBeforeSale - (3/130);
+    const editedVersionOfTeaThatSold = {...teaThatSold, amountInOunces: ouncesOfTeaAfterSale, numberOfCrates: cratesOfTeaAfterSale};
+    const updatedMainTeaList = this.state.mainTeaList
+      .filter(tea => tea.id !== this.state.selectedTea.id)
+      .concat(editedVersionOfTeaThatSold);
+    this.setState({
+      mainTeaList: updatedMainTeaList,
+      updateTeaFormVisible: false,
+      selectedTea: null,
+    });
+  }
+
+  handleSellingTenOunces= () => {
+    const teaThatSold = this.state.selectedTea;
+    const ouncesOfTeaBeforeSale = this.state.selectedTea.amountInOunces;
+    const ouncesOfTeaAfterSale = ouncesOfTeaBeforeSale - 10;
+    const cratesOfTeaBeforeSale = this.state.selectedTea.numberOfCrates;
+    const cratesOfTeaAfterSale = cratesOfTeaBeforeSale - (10/130);
+    const editedVersionOfTeaThatSold = {...teaThatSold, amountInOunces: ouncesOfTeaAfterSale, numberOfCrates: cratesOfTeaAfterSale};
+    const updatedMainTeaList = this.state.mainTeaList
+      .filter(tea => tea.id !== this.state.selectedTea.id)
+      .concat(editedVersionOfTeaThatSold);
+    this.setState({
+      mainTeaList: updatedMainTeaList,
+      updateTeaFormVisible: false,
+      selectedTea: null,
+    });
+  }
+
   render() {
     let currentVisibleState = null;
     let buttonText = null;
@@ -105,6 +139,8 @@ class TeaInventoryControl extends React.Component {
           tea = {this.state.selectedTea}
           onEditClick={this.handleEditClick}
           onSellClick={this.handleSellingSelectedTea}
+          onSellThreeOzClick={this.handleSellingThreeOunces}
+          onSellTenOzClick={this.handleSellingTenOunces}
         />
       buttonText = "Back to tea list";
     } 
