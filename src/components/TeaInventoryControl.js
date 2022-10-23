@@ -94,7 +94,8 @@ class TeaInventoryControl extends React.Component {
       const ouncesOfTeaAfterSale = ouncesOfTeaBeforeSale - 3;
       const cratesOfTeaBeforeSale = this.state.selectedTea.numberOfCrates;
       const cratesOfTeaAfterSale = cratesOfTeaBeforeSale - (3/130);
-      const editedVersionOfTeaThatSold = {...teaThatSold, amountInOunces: ouncesOfTeaAfterSale, numberOfCrates: cratesOfTeaAfterSale};
+      const teaSold = (this.state.selectedTea.teaSold || 0)
+      const editedVersionOfTeaThatSold = {...teaThatSold, amountInOunces: ouncesOfTeaAfterSale, numberOfCrates: cratesOfTeaAfterSale, teaSold:(teaSold +3)};
       const updatedMainTeaList = this.state.mainTeaList
         .filter(tea => tea.id !== this.state.selectedTea.id)
         .concat(editedVersionOfTeaThatSold);
@@ -115,7 +116,8 @@ class TeaInventoryControl extends React.Component {
       const ouncesOfTeaAfterSale = ouncesOfTeaBeforeSale - 10;
       const cratesOfTeaBeforeSale = this.state.selectedTea.numberOfCrates;
       const cratesOfTeaAfterSale = cratesOfTeaBeforeSale - (10/130);
-      const editedVersionOfTeaThatSold = {...teaThatSold, amountInOunces: ouncesOfTeaAfterSale, numberOfCrates: cratesOfTeaAfterSale};
+      const teaSold = (this.state.selectedTea.teaSold || 0)
+      const editedVersionOfTeaThatSold = {...teaThatSold, amountInOunces: ouncesOfTeaAfterSale, numberOfCrates: cratesOfTeaAfterSale, teaSold:(teaSold +10)};
       const updatedMainTeaList = this.state.mainTeaList
         .filter(tea => tea.id !== this.state.selectedTea.id)
         .concat(editedVersionOfTeaThatSold);
