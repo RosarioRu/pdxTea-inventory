@@ -90,7 +90,7 @@ function UpdateTeaForm(props) {
       origin: event.target.origin.value,
       price: parseFloat(event.target.price.value),
       caffeineLevel: event.target.caffeineLevel.value,
-      numberOfCrates: parseInt(event.target.numberOfCrates.value),
+      numberOfCrates: parseFloat(event.target.numberOfCrates.value).toFixed(2),
       amountInOunces: parseInt(event.target.numberOfCrates.value)*130,
       id: v4(),
     });

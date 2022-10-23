@@ -79,7 +79,7 @@ function NewTeaForm(props) {
     </React.Fragment>
   );
 
-  function handleNewTeaFormSubmission(event) {
+  function handleNewTeaFormSubmission(event) { 
     event.preventDefault();
     props.onNewTeaCreation({
       name: event.target.name.value,
@@ -87,12 +87,11 @@ function NewTeaForm(props) {
       origin: event.target.origin.value,
       price: parseFloat(event.target.price.value),
       caffeineLevel: event.target.caffeineLevel.value,
-      numberOfCrates: parseInt(event.target.numberOfCrates.value),
+      numberOfCrates: parseFloat(event.target.numberOfCrates.value).toFixed(2),
       amountInOunces: parseInt(event.target.numberOfCrates.value)*130,
       id: v4(),
     
     })
-    console.log("PRICE IS: " + event.target.price.value)
   }
 
 }

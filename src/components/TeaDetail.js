@@ -17,7 +17,7 @@ function TeaDetail(props) {
       <h6>Origin: {props.tea.origin}</h6>
       <h6>Price: ${props.tea.price}/oz</h6>
       <h6>Caffeine: {props.tea.caffeineLevel}</h6>
-      <h6>Crates: {props.tea.numberOfCrates}</h6>
+      <h6>Crates: {parseFloat(props.tea.numberOfCrates).toFixed(2)}</h6>
       <h6>Ounce: {props.tea.amountInOunces}</h6>
       <br/>
 
