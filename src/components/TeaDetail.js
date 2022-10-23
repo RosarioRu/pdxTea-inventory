@@ -2,6 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function TeaDetail(props) {
+
+  const buttonStyles = {
+    margin: "2px",
+    marginLeft: "1%",
+    marginRight: "1%",
+  }
+
   return (
     <React.Fragment>
       <br/>
@@ -13,7 +20,9 @@ function TeaDetail(props) {
       <h6>Crates: {props.tea.numberOfCrates}</h6>
       <h6>Ounce: {props.tea.amountInOunces}</h6>
       <br/>
-      <button onClick={props.onEditClick} className="btn btn-secondary btn-sm">Update Tea Info</button><br/><br/>
+
+      <button onClick={props.onSellClick} className="btn btn-outline-dark btn-sm">Sell 1oz</button><br/><br/>
+      <button style={buttonStyles} onClick={props.onEditClick} className="btn btn-secondary btn-sm">Update Tea Info</button>
     </React.Fragment>
   );
 }
@@ -21,6 +30,7 @@ function TeaDetail(props) {
 TeaDetail.propTypes = {
   tea: PropTypes.object,
   onEditClick: PropTypes.func,
+  onSellClick: PropTypes.func
 };
   
 export default TeaDetail;
